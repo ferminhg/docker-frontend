@@ -1,0 +1,15 @@
+# copy of docker running
+sudo: required # because we use dockefile
+services:
+    - docker
+
+# build our image using Dockerfile.dev
+before_install:
+    -  docker build -t ferminhg/docker-react -f Dockerfile.dev .
+
+# tell travis how to run our test suite
+script:
+    - docker run ferminhg/docker-react npm run test -- --coverage
+
+# tell travis how to deploy AWS
+
