@@ -9,7 +9,7 @@ before_install:
 
 # tell travis how to run our test suite
 script:
-    - docker run ferminhg/docker-react npm run test -- --coverage
+    - docker run ferminhg/docker-react npm run test -- --watchAll=false
 
 # tell travis how to deploy AWS
 
